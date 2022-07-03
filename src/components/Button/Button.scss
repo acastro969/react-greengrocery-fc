@@ -1,12 +1,14 @@
 .button {
   color: white;
-  border-radius: 8px;
+  border-radius: 4px;
   border: none;
   padding: 8px;
   font-weight: bold;
   background-color: yellowgreen;
   cursor: pointer;
+  font-size: 16px;
   margin-bottom: 8px;
+  width: 100%;
 
   &:hover {
     background-color: forestgreen;
@@ -18,5 +20,9 @@
     &:hover {
       background-color: red;
     }
+  }
+
+  &--disabled {
+    filter: grayscale(60%);;
   }
 }

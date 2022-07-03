@@ -1,4 +1,6 @@
 .navbar {
+  position: sticky;
+  top: 0;
   background-color: yellowgreen;
 
   .navbar__list {
@@ -6,25 +8,30 @@
     margin-bottom: 0;
     list-style: none;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 
     .navbar__link {
+      margin-right: 12px;
       position: relative;
 
       .link {
         transition: all 0.1s;
         border-radius: 8px;
-        padding: 8px;
+        padding: 4px;
         display: flex;
         color: white;
-        font-size: 24px;
+        font-size: 20px;
         text-decoration: none;
 
         &:hover {
           background-color: forestgreen;
         }
       }
+    }
+
+    .navbar__link--last {
+      margin-right: 0;
+      margin-left: auto;
     }
   }
 }
