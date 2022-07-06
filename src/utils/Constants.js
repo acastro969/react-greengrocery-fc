@@ -32,3 +32,9 @@ export const EMAIL_MIN_LENGTH = 6;
 export const EMAIL_MAX_LENGTH = 254;
 export const PWD_MIN_LENGTH = 8;
 export const PWD_MAX_LENGTH = 256;
+
+export const MSG_VALUE_TOO_SHORT = 'The value is too short';
+export const MSG_VALUE_TOO_LONG = 'The value is too long';
+export const MSG_MUST_BE_VALID_EMAIL = 'The value must be a valid email';
+export const MSG_REQUIRED = 'The field is required';
+export const MSG_PASSWORDS_MUST_MATCH = 'Passwords must match';
