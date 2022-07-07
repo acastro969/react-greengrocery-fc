@@ -10,7 +10,7 @@ import {
   MSG_MUST_BE_VALID_EMAIL,
   MSG_PASSWORDS_MUST_MATCH,
   MSG_REQUIRED,
-  MSG_TTYCC,
+  MSG_TANDC,
   MSG_VALUE_TOO_LONG,
   MSG_VALUE_TOO_SHORT,
   PWD_MAX_LENGTH,
@@ -46,8 +46,8 @@ const SignInSchema = Yup.object().shape({
   passwordRepeat: Yup.string()
     .oneOf([Yup.ref('password'), null], MSG_PASSWORDS_MUST_MATCH)
     .required(MSG_REQUIRED),
-  ttycc: Yup.boolean()
-    .oneOf([true], MSG_TTYCC)
+  tandc: Yup.boolean()
+    .oneOf([true], MSG_TANDC)
 });
 
 const SignIn = () => {
@@ -101,8 +101,8 @@ const SignIn = () => {
                 maxLength={PWD_MAX_LENGTH}
               />
               <Checkbox
-                id='ttycc'
-                name='ttycc'
+                id='tandc'
+                name='tandc'
               >
                 Accept Terms and Conditions
               </Checkbox>
