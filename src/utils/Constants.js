@@ -38,3 +38,4 @@ export const MSG_VALUE_TOO_LONG = 'The value is too long';
 export const MSG_MUST_BE_VALID_EMAIL = 'The value must be a valid email';
 export const MSG_REQUIRED = 'The field is required';
 export const MSG_PASSWORDS_MUST_MATCH = 'Passwords must match';
+export const MSG_TTYCC = 'You must accept terms and conditions in order to sign in';

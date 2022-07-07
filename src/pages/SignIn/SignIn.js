@@ -1,5 +1,6 @@
 import { Form, Formik } from 'formik';
 import Input from '../../components/Input/Input';
+import Checkbox from '../../components/Checkbox/Checkbox';
 import Button from '../../components/Button/Button';
 import Card from '../../components/Card/Card';
 import Title from '../../components/Title/Title';
@@ -9,6 +10,7 @@ import {
   MSG_MUST_BE_VALID_EMAIL,
   MSG_PASSWORDS_MUST_MATCH,
   MSG_REQUIRED,
+  MSG_TTYCC,
   MSG_VALUE_TOO_LONG,
   MSG_VALUE_TOO_SHORT,
   PWD_MAX_LENGTH,
@@ -23,7 +25,8 @@ const initialState = {
   username: '',
   email: '',
   password: '',
-  passwordRepeat: ''
+  passwordRepeat: '',
+  ttycc: false
 }
 
 const SignInSchema = Yup.object().shape({
@@ -43,6 +46,8 @@ const SignInSchema = Yup.object().shape({
   passwordRepeat: Yup.string()
     .oneOf([Yup.ref('password'), null], MSG_PASSWORDS_MUST_MATCH)
     .required(MSG_REQUIRED),
+  ttycc: Yup.boolean()
+    .oneOf([true], MSG_TTYCC)
 });
 
 const SignIn = () => {
@@ -95,6 +100,12 @@ const SignIn = () => {
                 minLength={PWD_MIN_LENGTH}
                 maxLength={PWD_MAX_LENGTH}
               />
+              <Checkbox
+                id='ttycc'
+                name='ttycc'
+              >
+                Accept Terms and Conditions
+              </Checkbox>
               <Button disabled={!formik.dirty || !formik.isValid}>Sign in</Button>
               <Button
                 secondary
