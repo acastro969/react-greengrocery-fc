@@ -1,10 +1,7 @@
-import './ProductDetail.scss';
+import * as S from './ProductDetail.styles';
 
 const ProductDetail = ({ product }) => (
-  <div
-    className='product-detail'
-    key={product.id}
-  >
+  <S.ProductDetail key={product.id}>
     <img
       src={product.img}
       alt=''
@@ -12,7 +9,7 @@ const ProductDetail = ({ product }) => (
     />
     <p>{product.title}</p>
     <p><b>{product.added}</b> kg/s</p>
-  </div>
+  </S.ProductDetail>
 );
 
 export default ProductDetail;

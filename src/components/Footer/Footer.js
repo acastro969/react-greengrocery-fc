@@ -1,9 +1,9 @@
-import './Footer.scss';
+import * as S from './Footer.styles.js';
 
 const Footer = () => (
-  <footer className='footer'>
-    <p>© Copyright Castro Ranz Alfredo. All Rights Reserved</p>
-  </footer>
+  <S.Footer>
+    <S.CopyrightText>© Copyright Castro Ranz Alfredo. All Rights Reserved</S.CopyrightText>
+  </S.Footer>
 );
 
 export default Footer;

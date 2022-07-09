@@ -1,9 +1,9 @@
-import './Card.scss';
+import * as S from './Card.styles.js';
 
 const Card = ({ children }) => (
-  <div className='card'>
+  <S.Card>
     {children}
-  </div>
+  </S.Card>
 );
 
 export default Card;

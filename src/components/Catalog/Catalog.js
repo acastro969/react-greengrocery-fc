@@ -1,5 +1,5 @@
 import Product from '../Product/Product';
-import './Catalog.scss';
+import * as S from './Catalog.styles.js';
 
 const Catalog = ({ products, addToCart }) => {
   const renderProductList = () => {
@@ -13,9 +13,9 @@ const Catalog = ({ products, addToCart }) => {
   }
 
   return (
-    <div className='catalog'>
+    <S.Catalog>
       {renderProductList()}
-    </div>
+    </S.Catalog>
   );
 }
 

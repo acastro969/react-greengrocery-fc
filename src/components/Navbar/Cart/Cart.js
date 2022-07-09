@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import Button from '../../Button/Button';
 import ProductDetail from './ProductDetail/ProductDetail';
-import './Cart.scss';
+import * as S from './Cart.styles';
 
 const Cart = ({ products, showCartPanel, resetCart }) => {
   const renderDetails = () => {
@@ -22,41 +22,41 @@ const Cart = ({ products, showCartPanel, resetCart }) => {
   }
 
   return (
-    <div className='cart'>
+    <S.Cart>
       <FontAwesomeIcon
         icon={faCartShopping}
       />
       My Cart
-      <span className='bubble'>
-          {calculateTotalProducts()}
-        </span>
+      <S.Bubble>
+        {calculateTotalProducts()}
+      </S.Bubble>
       {showCartPanel === true && (
-        <div className='cart__panel'>
+        <S.Panel>
           {products.length > 0 ? (
             <>
-              <div className='panel__product-list'>
+              <S.Products>
                 {renderDetails()}
-              </div>
-              <div className='panel__summary'>
+              </S.Products>
+              <S.Summary>
                 Total: <b>${calculateTotalPrice()}</b>
-              </div>
-              <div className='panel__actions'>
+              </S.Summary>
+              <S.ActionsWrapper>
                 <Button
                   onClick={() => resetCart()}
                   secondary={true}
                 >
                   Clear cart
                 </Button>
-              </div>
+              </S.ActionsWrapper>
             </>
           ) : (
             <>
               Your cart is empty.
             </>
           )}
-        </div>
+        </S.Panel>
       )}
-    </div>
+    </S.Cart>
   );
 }
 

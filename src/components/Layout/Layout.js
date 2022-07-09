@@ -1,9 +1,9 @@
-import './Layout.scss';
+import * as S from './Layout.styles.js';
 
 const Layout = ({ children }) => (
-  <div className='layout'>
+  <S.Layout>
     {children}
-  </div>
+  </S.Layout>
 );
 
 export default Layout;

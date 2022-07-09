@@ -1,28 +1,28 @@
 import Button from '../Button/Button';
-import './Product.scss';
+import * as S from './Product.styles';
 
 const Product = ({ product, addToCart }) => (
-  <div className='product'>
-    <div className='product__image'>
+  <S.Product>
+    <S.ImageWrapper>
       <img src={product.img} alt='' width='100' />
-    </div>
-    <div className='product__details'>
-      <h2 className='product__title'>
+    </S.ImageWrapper>
+    <S.Details>
+      <S.Title>
         {product.title}
-      </h2>
-      <p className='product__price'>
+      </S.Title>
+      <S.Price>
         ${product.price} / kg&nbsp;
         {product.addedQuantity > 0 && `(${product.addedQuantity})`}
-      </p>
-      <div className='product__buttons'>
+      </S.Price>
+      <S.ActionsWrapper>
         <Button
           onClick={() => addToCart(product)}
         >
           Add to cart
         </Button>
-      </div>
-    </div>
-  </div>
+      </S.ActionsWrapper>
+    </S.Details>
+  </S.Product>
 );
 
 export default Product;

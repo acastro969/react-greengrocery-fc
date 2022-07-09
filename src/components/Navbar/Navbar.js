@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import Cart from './Cart/Cart';
-import { Link } from 'react-router-dom';
 import { HOME_ROUTE, LOG_IN_ROUTE, SIGN_IN_ROUTE } from '../../utils/Constants';
-import './Navbar.scss';
+import * as S from './Navbar.styles';
 
 const Navbar = ({ products, resetCart }) => {
   const [showCartPanel, setShowCartPanel] = useState(false);
@@ -11,39 +10,36 @@ const Navbar = ({ products, resetCart }) => {
     setShowCartPanel(!showCartPanel);
 
   return (
-    <header className='navbar'>
+    <S.Header>
       <nav>
-        <ul className='navbar__list'>
-          <li className='navbar__link'>
-            <Link
-              className='link'
+        <S.NavbarList>
+          <S.Item>
+            <S.NavbarLink
               href='/'
               to={HOME_ROUTE}
             >
               Home
-            </Link>
-          </li>
-          <li className='navbar__link'>
-            <Link
-              className='link'
+            </S.NavbarLink>
+          </S.Item>
+          <S.Item>
+            <S.NavbarLink
               href='/'
               to={LOG_IN_ROUTE}
             >
               Log in
-            </Link>
-          </li>
-          <li className='navbar__link'>
-            <Link
-              className='link'
+            </S.NavbarLink>
+          </S.Item>
+          <S.Item>
+            <S.NavbarLink
               href='/'
               to={SIGN_IN_ROUTE}
             >
               Sign in
-            </Link>
-          </li>
-          <li className='navbar__link navbar__link--last'>
-            <a
-              className='link'
+            </S.NavbarLink>
+          </S.Item>
+          <S.Item>
+            <S.NavbarLink
+              as="a"
               href='#'
               onClick={() => toggleCartPanel()}
             >
@@ -52,11 +48,11 @@ const Navbar = ({ products, resetCart }) => {
                 products={products}
                 showCartPanel={showCartPanel}
               />
-            </a>
-          </li>
-        </ul>
+            </S.NavbarLink>
+          </S.Item>
+        </S.NavbarList>
       </nav>
-    </header>
+    </S.Header>
   )
 };
 

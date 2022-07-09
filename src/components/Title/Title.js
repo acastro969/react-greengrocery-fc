@@ -1,9 +1,9 @@
-import './Title.scss';
+import * as S from './Title.styles';
 
 const Title = ({ children }) => (
-  <h1 className='title'>
+  <S.Title>
     {children}
-  </h1>
+  </S.Title>
 );
 
 export default Title;
